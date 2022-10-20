@@ -165,3 +165,6 @@ alias kube-del-po="kubectl delete pod"
 #export HTTPS_PROXY=https://127.0.0.1:1087
 #export NO_PROXY=localhost,127.0.0.1,192.168.64.0/24
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+source $HOME/.functions
