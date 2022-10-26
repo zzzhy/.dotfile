@@ -1,0 +1,25 @@
+aliBrew()
+{
+  oldpwd=`pwd`
+  # 替换brew.git 为阿里云源
+  cd "$(brew --repo)"
+  git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+  cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+  git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+  export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+  cd $oldpwd
+}
+gitBrew()
+{
+  oldpwd=`pwd`
+  # 替换brew.git 为官方源
+  cd "$(brew --repo)"
+  git remote set-url origin https://github.com/Homebrew/brew
+  cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+  git remote set-url origin https://github.com/Homebrew/homebrew-core
+  cd $oldpwd
+}
+json()
+{
+  echo $1 | jq -S
+}
