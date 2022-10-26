@@ -11,3 +11,4 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp -f .vimrc $HOME/
 cp -f .zshrc $HOME/
 cp -f reset-ide.sh $HOME/
+cp -f .functions $HOME/
