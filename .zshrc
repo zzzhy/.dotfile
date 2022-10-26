@@ -69,10 +69,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 # ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # plugins=(git autojump osx mvn gradle docker cp docker-compose docker-machine helm minikube nmap npm oc rsync sbt scala tmux vi-mode vim-interaction yarn)
-plugins=(git autojump zsh-autosuggestions)
+plugins=(git autojump zsh-autosuggestions docker minikube oc mvn)
 
 source $ZSH/oh-my-zsh.sh
-
 
 # User configuration
 
@@ -106,50 +105,11 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
+
+# autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-oldpwd=`pwd`
-aliBrew()
-{
-  # 替换brew.git 为阿里云源
-  cd "$(brew --repo)"
-  git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
-  cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-  git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
-  export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
-}
-gitBrew()
-{
-  # 替换brew.git 为官方源
-  cd "$(brew --repo)"
-  git remote set-url origin https://github.com/Homebrew/brew
-  cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-  git remote set-url origin https://github.com/Homebrew/homebrew-core
-}
-gitBrew
-cd $oldpwd
-
-startRedis()
-{
-  redis-server /usr/local/etc/redis.conf &
-}
-
-startMongo()
-{
-  mongod --config /usr/local/etc/mongod.conf &
-}
-
-startMysql()
-{
-  mysql.server start &
-}
-startMinikube()
-{
-  minikube start --cache-images --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers --cpus 4 --memory 9180
-}
-
 # zsh-syntax-highlighting init
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
