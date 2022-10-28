@@ -117,6 +117,7 @@ alias kube-desc-po="kubectl describe pod"
 alias kube-po="kubectl get po"
 alias kube-dep="kubectl get deployment"
 alias kube-del-po="kubectl delete pod"
+eval $(thefuck --alias tf)
 
 #git config --global http.proxy socks5://127.0.0.1:1086
 #git config --global https.proxy socks5://127.0.0.1:1086

@@ -60,6 +60,8 @@ autocmd vimenter * if !argc()|NERDTree|endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "" 打开vim时自动打开NERDTree
 autocmd vimenter * NERDTree
+wincmd w
+autocmd VimEnter * wincmd w
 let NERDTreeIgnore = ['.*\.pyc', '.*\.gitignore', '.DS_Store', '__pycache__']
 
 "" YCM
