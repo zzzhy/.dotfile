@@ -129,3 +129,4 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 source $HOME/.functions
+
