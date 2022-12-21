@@ -12,7 +12,10 @@ if [ ! -f "/usr/local/bin/brew" ] ;then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 # 安装软件
+echo "安装brew software"
 brew bundle
+# jdk配置
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 VUNDLE="/Users/$ME/.vim/bundle/Vundle.vim"
 if [ ! -d "$VUNDLE" ] ;then
