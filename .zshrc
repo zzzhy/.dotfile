@@ -113,6 +113,10 @@ alias -s bz2='tar -xjvf'
 # zsh-syntax-highlighting init
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+[ ! -d $(pyenv root)/plugins/pyenv-virtualenv ] && git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 alias kube-desc-po="kubectl describe pod"
 alias kube-po="kubectl get po"
 alias kube-dep="kubectl get deployment"

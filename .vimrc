@@ -20,6 +20,7 @@ set backspace=indent,eol,start
 "" syntax
 syntax on
 set number
+set nu
 
 " use fzf 命令提示
 set rtp+=/usr/local/opt/fzf

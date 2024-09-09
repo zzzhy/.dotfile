@@ -31,3 +31,5 @@ cp -f .functions $HOME/
 
 # 安装vim插件
 vim +PluginInstall +qall 
+
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
